@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>Game2</p>
-
+  {% include 'imports/progress.html.twig' with {'width': '44%'} %}
+  <p class="question">Was ist die Ticketnummer von Marc’s erstem Ticket bei Shopware?</p>
+  <div class="answer">
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+      {{ form_widget(form) }}
     {{ form_end(form) }}
+  </div>
 {% endblock %}
