@@ -1,7 +1,35 @@
-index:
-    path: /
-    controller: App\Controller\GameController::index
+firstQuestion:
+  path: /
+  controller: App\Controller\GameController::firstQuestion
 
-firstSteps:
-  path: /firstSteps
-  controller: App\Controller\GameController::firstSteps
+secoundQuestion:
+  path: /dup-dupi-dup-first-steps
+  controller: App\Controller\GameController::secoundQuestion
+
+thirdQuestion:
+  path: /really-you-got-it
+  controller: App\Controller\GameController::thirdQuestion
+
+fourthQuestion:
+  path: /oh-yeah-here-we-go
+  controller: App\Controller\GameController::fourthQuestion
+
+fifthQuestion:
+  path: /the-final-countdown
+  controller: App\Controller\GameController::fifthQuestion
+
+sixthQuestion:
+  path: /ok-maybe-not
+  controller: App\Controller\GameController::sixthQuestion
+
+seventhQuestion:
+  path: /just-another-useless-question
+  controller: App\Controller\GameController::seventhQuestion
+
+eighthQuestion:
+  path: /nearly-the-end---not
+  controller: App\Controller\GameController::eighthQuestion
+
+final:
+  path: /ha-ha-you-will-never-get-this
+  controller: App\Controller\GameController::finalAction

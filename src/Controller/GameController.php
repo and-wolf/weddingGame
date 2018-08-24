@@ -13,7 +13,7 @@ class GameController extends AbstractController {
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request)
+    public function firstQuestion(Request $request)
     {
         $form = $this->createFormBuilder()
             ->add('answer', TextType::class)
@@ -23,8 +23,8 @@ class GameController extends AbstractController {
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $answer = $form->getData()['answer'];
-            if($answer == 'Test123') {
-                return $this->redirectToRoute('firstSteps');
+            if(strtolower($answer) == strtolower('swplat-725')) {
+                return $this->redirect('really-you-got-it');
             }
         }
 
@@ -33,17 +33,18 @@ class GameController extends AbstractController {
         ));
     }
 
-    public function firstSteps(Request $request)
+    public function secoundQuestion(Request $request)
     {
         $form = $this->createFormBuilder()
             ->add('answer', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
             ->getForm();
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $answer = $form->getData()['answer'];
-            if($answer == 'Test123') {
-                return $this->redirectToRoute('firstSteps');
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('really-you-got-it');
             }
         }
 
@@ -52,4 +53,128 @@ class GameController extends AbstractController {
         ));
     }
 
+    public function thirdQuestion(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('answer', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $answer = $form->getData()['answer'];
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('oh-yeah-here-we-go');
+            }
+        }
+
+        return $this->render('game3.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function fourthQuestion(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('answer', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $answer = $form->getData()['answer'];
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('the-final-countdown');
+            }
+        }
+
+        return $this->render('game4.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function fifthQuestion(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('answer', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $answer = $form->getData()['answer'];
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('ok-maybe-not');
+            }
+        }
+
+        return $this->render('game5.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function sixthQuestion(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('answer', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $answer = $form->getData()['answer'];
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('just-another-useless-question');
+            }
+        }
+
+        return $this->render('game6.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function seventhQuestion(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('answer', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $answer = $form->getData()['answer'];
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('nearly-the-end---not');
+            }
+        }
+
+        return $this->render('game7.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function eighthQuestion(Request $request)
+    {
+        $form = $this->createFormBuilder()
+            ->add('answer', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'Das ist die Antwort, ich bin mir sicher!'))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $answer = $form->getData()['answer'];
+            if($answer == 'SWPLAT-725') {
+                return $this->redirect('ha-ha-you-will-never-get-this');
+            }
+        }
+
+        return $this->render('game8.html.twig', array(
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function finalAction(Request $request)
+    {
+        return $this->render('final.html.twig', []);
+    }
 }
