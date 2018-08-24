@@ -1,7 +1,6 @@
 html, body {
   height: 100%;
   box-sizing: border-box;
-  cursor: pointer;
 }
 
 body {
@@ -12,7 +11,10 @@ body {
   font-family: 'Chewy', cursive;
   justify-content: center;
   font-size: 40px;
-  text-shadow: 2px 2px rgba(0,0,0,.8);
+  text-shadow: 2px 2px rgba(0,0,0,.5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url('../images/cursor.svg'), auto;
 }
 
 .wrapper {
@@ -41,7 +43,7 @@ body {
   background: #c13343;
   border: 10px solid white;
   color: white;
-  cursor: pointer;
+  cursor: url('../images/cursor.svg'), auto;
 }
 
 .answer label {
@@ -61,8 +63,9 @@ body {
   margin-top: 60px;
   transform: rotate(-1deg);
   transition: transform .3s ease-in-out;
+  text-shadow: 2px 2px rgba(0,0,0,.5);
   position: relative;
-  cursor: pointer;
+  cursor: url('../images/cursor.svg'), auto;
 }
 
 .answer button::after {
@@ -93,13 +96,33 @@ body {
   background: #464646;
 }
 
+.progress-headline {
+  margin-bottom: 10px;
+  transform: rotate(-1deg);
+  position: relative;
+  display: inline-flex;
+  float: left;
+}
+
+.progress-headline::before {
+  animation: heartbeat 5s infinite;
+  content: '';
+  background: url('../images/emoji.png') no-repeat center;
+  background-size: contain;
+  transform: rotate(-1deg);
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: -55px;
+  top: 4px;
+}
+
 .progress-inner {
   height: 40px;
   width: 100%;
-  /* background: #ff66b0; */
-  background: #bc4e9c;
-  background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);
-  background: linear-gradient(to right, #f80759, #bc4e9c);
+  background: #ff0081;
+  background: -webkit-linear-gradient(to right, #a90707, #ff0081);
+  background: linear-gradient(to right, #a90707, #ff0081);
   position: relative;
   border-radius: 50px 0 0 50px;
 }
@@ -109,11 +132,11 @@ body {
   content: '';
   background: url('../images/heart.png') no-repeat center;
   transform: rotate(-1deg);
-  height: 90px;
-  width: 90px;
+  height: 100px;
+  width: 100px;
   position: absolute;
   right: -34px;
-  top: -25px;
+  top: -34px;
 }
 
 @keyframes heartbeat {
